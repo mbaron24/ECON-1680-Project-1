@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="ipums-ddi-xslt.xsl"?>
-<codeBook ID="ddi2-46d0cc90-9e6b-013b-2196-0242c0a83007-usa_00004.dat-usa.ipums.org" version="2.5" xmlns="ddi:codebook:2_5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="ddi:codebook:2_5 http://www.ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/codebook.xsd">
+<codeBook ID="ddi2-46d0cc90-9e6b-013b-2196-0242c0a83007-usa_00005.dat-usa.ipums.org" version="2.5" xmlns="ddi:codebook:2_5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="ddi:codebook:2_5 http://www.ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/codebook.xsd">
   <docDscr>
     <citation>
       <titlStmt>
         <titl>Codebook for an IPUMS-USA Data Extract</titl>
-        <subTitl>DDI 2.5 metadata describing the extract file  'usa_00004.dat'</subTitl>
-        <IDNo>ddi2-46d0cc90-9e6b-013b-2196-0242c0a83007-usa_00004.dat-usa.ipums.org</IDNo>
+        <subTitl>DDI 2.5 metadata describing the extract file  'usa_00005.dat'</subTitl>
+        <IDNo>ddi2-46d0cc90-9e6b-013b-2196-0242c0a83007-usa_00005.dat-usa.ipums.org</IDNo>
       </titlStmt>
       <rspStmt>
         <AuthEnty affiliation="University of Minnesota">IPUMS</AuthEnty>
@@ -24,7 +24,7 @@
   <stdyDscr>
     <citation>
       <titlStmt>
-        <titl>User Extract usa_00004.dat</titl>
+        <titl>User Extract usa_00005.dat</titl>
       </titlStmt>
       <rspStmt>
         <AuthEnty affiliation="University of Minnesota">IPUMS</AuthEnty>
@@ -52,6 +52,7 @@
         <topcClas vocab="IPUMS">Group Quarters Variables -- HOUSEHOLD</topcClas>
         <topcClas vocab="IPUMS">Economic Characteristic Variables -- HOUSEHOLD</topcClas>
         <topcClas vocab="IPUMS">Technical Variables -- PERSON</topcClas>
+        <topcClas vocab="IPUMS">Family Interrelationship Variables -- PERSON</topcClas>
         <topcClas vocab="IPUMS">Demographic Variables -- PERSON</topcClas>
         <topcClas vocab="IPUMS">Race, Ethnicity, and Nativity Variables -- PERSON</topcClas>
         <topcClas vocab="IPUMS">Education Variables -- PERSON</topcClas>
@@ -64,8 +65,6 @@
         <nation abbr="us">United States</nation>
       </sumDscr>
       <notes><![CDATA[Additional notes on a sample that is part of this study:  2021 ACS
-            Density of the full data file:  1.0%
-            Density of this extract: 1.0%
 ]]></notes>
     </stdyInfo>
     <dataAccs>
@@ -95,12 +94,12 @@ The licensing agreement for use of IPUMS-USA data requires that users supply us 
         <disclaimer>The user of the data acknowledges that the original collector of the data, the authorized distributor of the data, and the relevant funding agency bear no responsibility for use of the data or for interpretations or inferences based upon such uses.</disclaimer>
       </useStmt>
     </dataAccs>
-    <notes><![CDATA[User-provided description:  Revision of 00002]]></notes>
-    <notes>This extract is a revision of the user's previous extract, ID 17864997.</notes>
+    <notes><![CDATA[User-provided description:  Revision of (Revision of 00002)]]></notes>
+    <notes>This extract is a revision of the user's previous extract, ID 17870329.</notes>
   </stdyDscr>
   <fileDscr ID="ExtractData">
     <fileTxt>
-      <fileName>usa_00004.dat</fileName>
+      <fileName>usa_00005.dat</fileName>
       <fileCont>Microdata records</fileCont>
       <fileStrc type="rectangular"/>
       <fileType charset="ISO-8859-1">ISO-8859-1 data file</fileType>
@@ -1439,8 +1438,247 @@ PERWT Specific Variable Codes]]></codInstr>
       <concept vocab="IPUMS">Technical Variables -- PERSON</concept>
       <varFormat schema="other" type="numeric"/>
     </var>
-    <var ID="RELATE" dcml="0" files="ExtractData" intrvl="discrete" name="RELATE">
+    <var ID="FAMSIZE" dcml="0" files="ExtractData" intrvl="discrete" name="FAMSIZE">
       <location EndPos="97" StartPos="96" width="2"/>
+      <labl>Number of own family members in household</labl>
+      <txt><![CDATA[FAMSIZE counts the number of own family members residing with each individual, including the person her/himself. Persons not living with others related to them by blood, marriage/cohabitating partnership, or adoption are coded 1.]]></txt>
+      <catgry>
+        <catValu>01</catValu>
+        <labl>1 family member present</labl>
+      </catgry>
+      <catgry>
+        <catValu>02</catValu>
+        <labl>2 family members present</labl>
+      </catgry>
+      <catgry>
+        <catValu>03</catValu>
+        <labl>3</labl>
+      </catgry>
+      <catgry>
+        <catValu>04</catValu>
+        <labl>4</labl>
+      </catgry>
+      <catgry>
+        <catValu>05</catValu>
+        <labl>5</labl>
+      </catgry>
+      <catgry>
+        <catValu>06</catValu>
+        <labl>6</labl>
+      </catgry>
+      <catgry>
+        <catValu>07</catValu>
+        <labl>7</labl>
+      </catgry>
+      <catgry>
+        <catValu>08</catValu>
+        <labl>8</labl>
+      </catgry>
+      <catgry>
+        <catValu>09</catValu>
+        <labl>9</labl>
+      </catgry>
+      <catgry>
+        <catValu>10</catValu>
+        <labl>10</labl>
+      </catgry>
+      <catgry>
+        <catValu>11</catValu>
+        <labl>11</labl>
+      </catgry>
+      <catgry>
+        <catValu>12</catValu>
+        <labl>12</labl>
+      </catgry>
+      <catgry>
+        <catValu>13</catValu>
+        <labl>13</labl>
+      </catgry>
+      <catgry>
+        <catValu>14</catValu>
+        <labl>14</labl>
+      </catgry>
+      <catgry>
+        <catValu>15</catValu>
+        <labl>15</labl>
+      </catgry>
+      <catgry>
+        <catValu>16</catValu>
+        <labl>16</labl>
+      </catgry>
+      <catgry>
+        <catValu>17</catValu>
+        <labl>17</labl>
+      </catgry>
+      <catgry>
+        <catValu>18</catValu>
+        <labl>18</labl>
+      </catgry>
+      <catgry>
+        <catValu>19</catValu>
+        <labl>19</labl>
+      </catgry>
+      <catgry>
+        <catValu>20</catValu>
+        <labl>20</labl>
+      </catgry>
+      <catgry>
+        <catValu>21</catValu>
+        <labl>21</labl>
+      </catgry>
+      <catgry>
+        <catValu>22</catValu>
+        <labl>22</labl>
+      </catgry>
+      <catgry>
+        <catValu>23</catValu>
+        <labl>23</labl>
+      </catgry>
+      <catgry>
+        <catValu>24</catValu>
+        <labl>24</labl>
+      </catgry>
+      <catgry>
+        <catValu>25</catValu>
+        <labl>25</labl>
+      </catgry>
+      <catgry>
+        <catValu>26</catValu>
+        <labl>26</labl>
+      </catgry>
+      <catgry>
+        <catValu>27</catValu>
+        <labl>27</labl>
+      </catgry>
+      <catgry>
+        <catValu>28</catValu>
+        <labl>28</labl>
+      </catgry>
+      <catgry>
+        <catValu>29</catValu>
+        <labl>29</labl>
+      </catgry>
+      <catgry>
+        <catValu>30</catValu>
+        <labl>30</labl>
+      </catgry>
+      <catgry>
+        <catValu>31</catValu>
+        <labl>31</labl>
+      </catgry>
+      <catgry>
+        <catValu>32</catValu>
+        <labl>32</labl>
+      </catgry>
+      <catgry>
+        <catValu>33</catValu>
+        <labl>33</labl>
+      </catgry>
+      <catgry>
+        <catValu>34</catValu>
+        <labl>34</labl>
+      </catgry>
+      <catgry>
+        <catValu>35</catValu>
+        <labl>35</labl>
+      </catgry>
+      <catgry>
+        <catValu>36</catValu>
+        <labl>36</labl>
+      </catgry>
+      <catgry>
+        <catValu>37</catValu>
+        <labl>37</labl>
+      </catgry>
+      <catgry>
+        <catValu>38</catValu>
+        <labl>38</labl>
+      </catgry>
+      <catgry>
+        <catValu>39</catValu>
+        <labl>39</labl>
+      </catgry>
+      <catgry>
+        <catValu>40</catValu>
+        <labl>40</labl>
+      </catgry>
+      <catgry>
+        <catValu>41</catValu>
+        <labl>41</labl>
+      </catgry>
+      <catgry>
+        <catValu>42</catValu>
+        <labl>42</labl>
+      </catgry>
+      <catgry>
+        <catValu>43</catValu>
+        <labl>43</labl>
+      </catgry>
+      <catgry>
+        <catValu>44</catValu>
+        <labl>44</labl>
+      </catgry>
+      <catgry>
+        <catValu>45</catValu>
+        <labl>45</labl>
+      </catgry>
+      <catgry>
+        <catValu>46</catValu>
+        <labl>46</labl>
+      </catgry>
+      <catgry>
+        <catValu>47</catValu>
+        <labl>47</labl>
+      </catgry>
+      <catgry>
+        <catValu>48</catValu>
+        <labl>48</labl>
+      </catgry>
+      <catgry>
+        <catValu>49</catValu>
+        <labl>49</labl>
+      </catgry>
+      <catgry>
+        <catValu>50</catValu>
+        <labl>50</labl>
+      </catgry>
+      <catgry>
+        <catValu>51</catValu>
+        <labl>51</labl>
+      </catgry>
+      <catgry>
+        <catValu>52</catValu>
+        <labl>52</labl>
+      </catgry>
+      <catgry>
+        <catValu>53</catValu>
+        <labl>53</labl>
+      </catgry>
+      <catgry>
+        <catValu>54</catValu>
+        <labl>54</labl>
+      </catgry>
+      <catgry>
+        <catValu>55</catValu>
+        <labl>55</labl>
+      </catgry>
+      <catgry>
+        <catValu>56</catValu>
+        <labl>56</labl>
+      </catgry>
+      <catgry>
+        <catValu>57</catValu>
+        <labl>57</labl>
+      </catgry>
+      <catgry>
+        <catValu>58</catValu>
+        <labl>58</labl>
+      </catgry>
+      <concept vocab="IPUMS">Family Interrelationship Variables -- PERSON</concept>
+      <varFormat schema="other" type="numeric"/>
+    </var>
+    <var ID="RELATE" dcml="0" files="ExtractData" intrvl="discrete" name="RELATE">
+      <location EndPos="99" StartPos="98" width="2"/>
       <labl>Relationship to household head [general version]</labl>
       <txt><![CDATA[RELATE describes an individual's relationship to the head of household or householder. Beginning in 1880, data on household relationship was asked of every person. The general relationship code is reasonably comparable across years. The detailed code makes distinctions that cannot be made in all years.
 
@@ -1504,7 +1742,7 @@ RELATE is not available for 1850-1870, but the IPUMS variable IMPREL produces si
       <notes>Case selection:  01 Head/Householder</notes>
     </var>
     <var ID="RELATED" dcml="0" files="ExtractData" intrvl="discrete" name="RELATED">
-      <location EndPos="101" StartPos="98" width="4"/>
+      <location EndPos="103" StartPos="100" width="4"/>
       <labl>Relationship to household head [detailed version]</labl>
       <txt><![CDATA[RELATE describes an individual's relationship to the head of household or householder. Beginning in 1880, data on household relationship was asked of every person. The general relationship code is reasonably comparable across years. The detailed code makes distinctions that cannot be made in all years.
 
@@ -1887,7 +2125,7 @@ RELATE is not available for 1850-1870, but the IPUMS variable IMPREL produces si
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="SEX" dcml="0" files="ExtractData" intrvl="discrete" name="SEX">
-      <location EndPos="102" StartPos="102" width="1"/>
+      <location EndPos="104" StartPos="104" width="1"/>
       <labl>Sex</labl>
       <txt><![CDATA[SEX reports whether the person was male or female.]]></txt>
       <catgry>
@@ -1902,7 +2140,7 @@ RELATE is not available for 1850-1870, but the IPUMS variable IMPREL produces si
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="AGE" dcml="0" files="ExtractData" intrvl="discrete" name="AGE">
-      <location EndPos="105" StartPos="103" width="3"/>
+      <location EndPos="107" StartPos="105" width="3"/>
       <labl>Age</labl>
       <txt><![CDATA[AGE reports the person's age in years as of the last birthday.
 
@@ -2431,7 +2669,7 @@ Please see the Comparability section regarding a known Universe issue with AGE a
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="MARST" dcml="0" files="ExtractData" intrvl="discrete" name="MARST">
-      <location EndPos="106" StartPos="106" width="1"/>
+      <location EndPos="108" StartPos="108" width="1"/>
       <labl>Marital status</labl>
       <txt><![CDATA[MARST gives each person's current marital status.]]></txt>
       <catgry>
@@ -2462,7 +2700,7 @@ Please see the Comparability section regarding a known Universe issue with AGE a
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="RACE" dcml="0" files="ExtractData" intrvl="discrete" name="RACE">
-      <location EndPos="107" StartPos="107" width="1"/>
+      <location EndPos="109" StartPos="109" width="1"/>
       <labl>Race [general version]</labl>
       <txt><![CDATA[The concept of race has changed over the more than 150 years represented in IPUMS. Currently, the Census Bureau and others consider race to be a sociopolitical construct, not a scientific or anthropological one. Many detailed RACE categories consist of national origin groups. With the exception of the 1970-1990 Puerto Rican censuses, RACE was asked of every person in all years. 
 
@@ -2515,7 +2753,7 @@ User Note: Race questions were not asked in the Puerto Rican censuses of 1970, 1
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="RACED" dcml="0" files="ExtractData" intrvl="discrete" name="RACED">
-      <location EndPos="110" StartPos="108" width="3"/>
+      <location EndPos="112" StartPos="110" width="3"/>
       <labl>Race [detailed version]</labl>
       <txt><![CDATA[The concept of race has changed over the more than 150 years represented in IPUMS. Currently, the Census Bureau and others consider race to be a sociopolitical construct, not a scientific or anthropological one. Many detailed RACE categories consist of national origin groups. With the exception of the 1970-1990 Puerto Rican censuses, RACE was asked of every person in all years. 
 
@@ -3484,7 +3722,7 @@ User Note: Race questions were not asked in the Puerto Rican censuses of 1970, 1
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="HISPAN" dcml="0" files="ExtractData" intrvl="discrete" name="HISPAN">
-      <location EndPos="111" StartPos="111" width="1"/>
+      <location EndPos="113" StartPos="113" width="1"/>
       <labl>Hispanic origin [general version]</labl>
       <txt><![CDATA[HISPAN identifies persons of Hispanic/Spanish/Latino origin and classifies them according to their country of origin when possible. Origin is defined by the Census Bureau as ancestry, lineage, heritage, nationality group, or country of birth. People of Hispanic origin may be of any race; see RACE for a discussion of coding issues involved.  Users should note that race questions were not asked in the Puerto Rican censuses of 1970, 1980 and 1990.  They were asked in the 1910 and 1920 Puerto Rican censuses, and in the 2000 and 2010 Puerto Rican census and the PRCS.  However, questions assessing Spanish/Hispanic origin were not asked in the Puerto Rican censuses prior to 2000. 
 
@@ -3519,7 +3757,7 @@ In 2020, the Census Bureau updated the questionnaire text, processing, and codin
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="HISPAND" dcml="0" files="ExtractData" intrvl="discrete" name="HISPAND">
-      <location EndPos="114" StartPos="112" width="3"/>
+      <location EndPos="116" StartPos="114" width="3"/>
       <labl>Hispanic origin [detailed version]</labl>
       <txt><![CDATA[HISPAN identifies persons of Hispanic/Spanish/Latino origin and classifies them according to their country of origin when possible. Origin is defined by the Census Bureau as ancestry, lineage, heritage, nationality group, or country of birth. People of Hispanic origin may be of any race; see RACE for a discussion of coding issues involved.  Users should note that race questions were not asked in the Puerto Rican censuses of 1970, 1980 and 1990.  They were asked in the 1910 and 1920 Puerto Rican censuses, and in the 2000 and 2010 Puerto Rican census and the PRCS.  However, questions assessing Spanish/Hispanic origin were not asked in the Puerto Rican censuses prior to 2000. 
 
@@ -3750,7 +3988,7 @@ In 2020, the Census Bureau updated the questionnaire text, processing, and codin
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="CITIZEN" dcml="0" files="ExtractData" intrvl="discrete" name="CITIZEN">
-      <location EndPos="115" StartPos="115" width="1"/>
+      <location EndPos="117" StartPos="117" width="1"/>
       <labl>Citizenship status</labl>
       <txt><![CDATA[CITIZEN reports the citizenship status of respondents, distinguishing between naturalized citizens and non-citizens. For 1900-1940, respondents who were not yet citizens but who had begun the naturalization process ("received first papers") are identified.]]></txt>
       <catgry>
@@ -3789,7 +4027,7 @@ In 2020, the Census Bureau updated the questionnaire text, processing, and codin
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="YRSUSA1" dcml="0" files="ExtractData" intrvl="discrete" name="YRSUSA1">
-      <location EndPos="117" StartPos="116" width="2"/>
+      <location EndPos="119" StartPos="118" width="2"/>
       <labl>Years in the United States</labl>
       <txt><![CDATA[YRSUSA1 reports how long a person who was born in a foreign country or U.S. outlying area had been living in the United States. 
 
@@ -3812,7 +4050,7 @@ table_208.html
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="SPEAKENG" dcml="0" files="ExtractData" intrvl="discrete" name="SPEAKENG">
-      <location EndPos="118" StartPos="118" width="1"/>
+      <location EndPos="120" StartPos="120" width="1"/>
       <labl>Speaks English</labl>
       <txt><![CDATA[SPEAKENG indicates whether the respondent was able to speak English in 1900-1930 and 1970. Beginning in 1980, SPEAKENG indicates whether the respondent speaks only English at home, and also reports how well the respondent, who speaks a language other than English at home, speaks English.]]></txt>
       <catgry>
@@ -3859,7 +4097,7 @@ table_208.html
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="EDUC" dcml="0" files="ExtractData" intrvl="discrete" name="EDUC">
-      <location EndPos="120" StartPos="119" width="2"/>
+      <location EndPos="122" StartPos="121" width="2"/>
       <labl>Educational attainment [general version]</labl>
       <txt><![CDATA[EDUC indicates respondents' educational attainment, as measured by the highest year of school or degree completed. Note that completion differs from the highest year of school attendance; for example, respondents who attended 10th grade but did not finish were classified in EDUC as having completed 9th grade. For additional detail on grade attendance, see GRADEATT as well as the detailed version of HIGRADE.]]></txt>
       <catgry>
@@ -3914,7 +4152,7 @@ table_208.html
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="EDUCD" dcml="0" files="ExtractData" intrvl="discrete" name="EDUCD">
-      <location EndPos="123" StartPos="121" width="3"/>
+      <location EndPos="125" StartPos="123" width="3"/>
       <labl>Educational attainment [detailed version]</labl>
       <txt><![CDATA[EDUC indicates respondents' educational attainment, as measured by the highest year of school or degree completed. Note that completion differs from the highest year of school attendance; for example, respondents who attended 10th grade but did not finish were classified in EDUC as having completed 9th grade. For additional detail on grade attendance, see GRADEATT as well as the detailed version of HIGRADE.]]></txt>
       <catgry>
@@ -4097,7 +4335,7 @@ table_208.html
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="EMPSTAT" dcml="0" files="ExtractData" intrvl="discrete" name="EMPSTAT">
-      <location EndPos="124" StartPos="124" width="1"/>
+      <location EndPos="126" StartPos="126" width="1"/>
       <labl>Employment status [general version]</labl>
       <txt><![CDATA[EMPSTAT indicates whether the respondent was a part of the labor force -- working or seeking work -- and, if so, whether the person was currently unemployed. The second digit preserves additional related information available for some years but not others. See LABFORCE for a dichotomous variable that identifies whether a person participated in the labor force or not and is available for all years in the IPUMS.]]></txt>
       <catgry>
@@ -4120,7 +4358,7 @@ table_208.html
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="EMPSTATD" dcml="0" files="ExtractData" intrvl="discrete" name="EMPSTATD">
-      <location EndPos="126" StartPos="125" width="2"/>
+      <location EndPos="128" StartPos="127" width="2"/>
       <labl>Employment status [detailed version]</labl>
       <txt><![CDATA[EMPSTAT indicates whether the respondent was a part of the labor force -- working or seeking work -- and, if so, whether the person was currently unemployed. The second digit preserves additional related information available for some years but not others. See LABFORCE for a dichotomous variable that identifies whether a person participated in the labor force or not and is available for all years in the IPUMS.]]></txt>
       <catgry>
@@ -4187,7 +4425,7 @@ table_208.html
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="DIFFREM" dcml="0" files="ExtractData" intrvl="discrete" name="DIFFREM">
-      <location EndPos="127" StartPos="127" width="1"/>
+      <location EndPos="129" StartPos="129" width="1"/>
       <labl>Cognitive difficulty</labl>
       <txt><![CDATA[DIFFREM indicates whether the respondent has cognitive difficulties (such as learning, remembering, concentrating, or making decisions) because of a physical, mental, or emotional condition.]]></txt>
       <catgry>
@@ -4206,7 +4444,7 @@ table_208.html
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="DIFFPHYS" dcml="0" files="ExtractData" intrvl="discrete" name="DIFFPHYS">
-      <location EndPos="128" StartPos="128" width="1"/>
+      <location EndPos="130" StartPos="130" width="1"/>
       <labl>Ambulatory difficulty</labl>
       <txt><![CDATA[DIFFPHYS indicates whether the respondent has a condition that substantially limits one or more basic physical activities, such as walking, climbing stairs, reaching, lifting, or carrying.]]></txt>
       <catgry>
@@ -4225,7 +4463,7 @@ table_208.html
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="DIFFMOB" dcml="0" files="ExtractData" intrvl="discrete" name="DIFFMOB">
-      <location EndPos="129" StartPos="129" width="1"/>
+      <location EndPos="131" StartPos="131" width="1"/>
       <labl>Independent living difficulty</labl>
       <txt><![CDATA[DIFFMOB indicates whether the respondent has any physical, mental, or emotional condition lasting six months or more that makes it difficult or impossible to perform basic activities outside the home alone. This does not include temporary health problems, such as broken bones.]]></txt>
       <catgry>
@@ -4244,7 +4482,7 @@ table_208.html
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="DIFFCARE" dcml="0" files="ExtractData" intrvl="discrete" name="DIFFCARE">
-      <location EndPos="130" StartPos="130" width="1"/>
+      <location EndPos="132" StartPos="132" width="1"/>
       <labl>Self-care difficulty</labl>
       <txt><![CDATA[DIFFCARE indicates whether respondents have any physical or mental health condition that has lasted at least 6 months and makes it difficult for them to take care of their own personal needs, such as bathing, dressing, or getting around inside the home. This does not include temporary health conditions, such as broken bones or pregnancies.]]></txt>
       <catgry>
@@ -4263,7 +4501,7 @@ table_208.html
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="DIFFSENS" dcml="0" files="ExtractData" intrvl="discrete" name="DIFFSENS">
-      <location EndPos="131" StartPos="131" width="1"/>
+      <location EndPos="133" StartPos="133" width="1"/>
       <labl>Vision or hearing difficulty</labl>
       <txt><![CDATA[DIFFSENS indicates whether the respondent has a long-lasting condition of blindness, deafness, or a severe vision or hearing impairment. "Long-lasting" is not defined in the questionnaire.]]></txt>
       <catgry>
@@ -4282,7 +4520,7 @@ table_208.html
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="DIFFEYE" dcml="0" files="ExtractData" intrvl="discrete" name="DIFFEYE">
-      <location EndPos="132" StartPos="132" width="1"/>
+      <location EndPos="134" StartPos="134" width="1"/>
       <labl>Vision difficulty</labl>
       <txt><![CDATA[DIFFEYE indicates whether the respondent is blind or has serious difficulty seeing even with corrective lenses.]]></txt>
       <catgry>
@@ -4301,7 +4539,7 @@ table_208.html
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="DIFFHEAR" dcml="0" files="ExtractData" intrvl="discrete" name="DIFFHEAR">
-      <location EndPos="133" StartPos="133" width="1"/>
+      <location EndPos="135" StartPos="135" width="1"/>
       <labl>Hearing difficulty</labl>
       <txt><![CDATA[DIFFHEAR indicates whether the respondent is deaf or has serious difficulty hearing.]]></txt>
       <catgry>
@@ -4320,7 +4558,7 @@ table_208.html
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="VETSTAT" dcml="0" files="ExtractData" intrvl="discrete" name="VETSTAT">
-      <location EndPos="134" StartPos="134" width="1"/>
+      <location EndPos="136" StartPos="136" width="1"/>
       <labl>Veteran status [general version]</labl>
       <txt><![CDATA[
 Overview of Veteran Variables
@@ -4364,7 +4602,7 @@ Results based on the IPUMS data likewise differ from published reports by the Ce
       <varFormat schema="other" type="numeric"/>
     </var>
     <var ID="VETSTATD" dcml="0" files="ExtractData" intrvl="discrete" name="VETSTATD">
-      <location EndPos="136" StartPos="135" width="2"/>
+      <location EndPos="138" StartPos="137" width="2"/>
       <labl>Veteran status [detailed version]</labl>
       <txt><![CDATA[
 Overview of Veteran Variables
