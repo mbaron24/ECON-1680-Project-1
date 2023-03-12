@@ -125,7 +125,12 @@ X_test = scaler.transform(X_test) #normalizes test set X using scaler
 
 #OLS on training data
 olsReg = sm.OLS(y_train,X_train).fit()
-print(olsReg.summary())
+df_results = pd.DataFrame({'Variable':X.columns, 'Coeff OLS':olsReg.params})
+
+#calculate mean squared error in order to estimate out of sample accuracy
+ols_y_pred = olsReg.predict(X_test)
+OLS_MSE = mean_squared_error(y_test, ols_y_pred)
+
 
 #RIDGE REGRESSION
 
@@ -164,16 +169,22 @@ alpha = bestalpha_ridge
 ridgeReg = make_pipeline(StandardScaler(with_mean=False), Ridge(alpha= alpha * X_train.shape[0]))
 ridgeReg.fit(X_train, y_train)
 
-# Store coefficients in a dataframe
-df_results = pd.DataFrame({'Variable':X.columns, 'Coeff RIDGE':ridgeReg['ridge'].coef_})
+#calculate mean squared error in order to estimate out of sample accuracy
+ridge_y_pred = ridgeReg.predict(X_test)
+RIDGE_MSE = mean_squared_error(y_test, ridge_y_pred)
+
+# Add coefficients to results dataframe
+df_results['Coeff RIDGE'] = ridgeReg['ridge'].coef_
 
 
 #LASSO REGRESSION
+
 # Define model
 lassoReg = make_pipeline(StandardScaler(with_mean=False), Lasso())
 
 # Define parameter grid to search over using grid search
-alphas = np.linspace(1e-20, 1, num=50)*np.sqrt(X_train.shape[0])
+alphas = np.linspace(1e-14, 1, num=50)*np.sqrt(X_train.shape[0])
+params = {'lasso__alpha' : alphas}
 
 # Set up the grid search
 gsLasso = GridSearchCV(lassoReg, params, n_jobs=-1, cv=10)
@@ -182,14 +193,25 @@ gsLasso = GridSearchCV(lassoReg, params, n_jobs=-1, cv=10)
 gsLasso.fit(X, y)
 
 # Check best alpha
-print(list(gsLasso.best_params_.values())[0] / np.sqrt(X_train.shape[0]))
+bestalpha_lasso = list(gsLasso.best_params_.values())[0] / np.sqrt(X_train.shape[0])
 
 # Run lasso regression
-alpha = bestalpha_lasso
 lassoReg = make_pipeline(StandardScaler(with_mean=False), Lasso(alpha= bestalpha_lasso))
 lassoReg.fit(X_train, y_train)
+
+#calculate mean squared error in order to estimate out of sample accuracy
+lasso_y_pred = lassoReg.predict(X_test)
+LASSO_MSE = mean_squared_error(y_test, lasso_y_pred)
 
 # Add coefficients to dataframe
 df_results['Coeff LASSO'] = lassoReg['lasso'].coef_
 print(df_results)
 
+#see which variables are most predictive of SNAP participation
+lasso_best_vars = df_results[(df_results['Coeff LASSO'] > 0) | \
+                             (df_results['Coeff LASSO'] < 0)].sort_values("Coeff LASSO", ascending=False, key=abs)
+lasso_best_vars_list = lasso_best_vars["Variable"].tolist()
+print(lasso_best_vars_list)
+
+
+#NEURAL NETWORK
