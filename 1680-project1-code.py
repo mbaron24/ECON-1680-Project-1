@@ -93,14 +93,11 @@ df_ipums_scaled['SEXxAGE'] = df_ipums_scaled['AGE']*df_ipums_scaled['SEX']
 #create an interaction variable for sex and age
 df_ipums_scaled['SEXxAGE'] = df_ipums_scaled['AGE']*df_ipums_scaled['SEX']
 
-#create an interaction variable for sex, race, and age
-df_ipums_scaled['SEXxAGExRACE'] = df_ipums_scaled['AGE']*df_ipums_scaled['SEX']*df_ipums_scaled['RACE']
-
 #drop variables that are not important to the research question
 df_ipums_scaled.dropna(subset=['REGION', 'METRO', 'HOMELAND', 'HHINCOME', 'FAMSIZE', 'SEX', 'AGE', \
                     'MARST', 'RACE', 'HISPAN-binary', 'CITIZEN', 'YRSUSA1', 'SPEAKENG', 'EDUC', \
                         'EMPSTAT','VETSTAT','DISSABILITY','FAMSIZExMETRO','SEXxRACE', \
-                            'AGExRACE', 'SEXxAGE', 'SEXxAGExRACE', 'FOODSTMP'],inplace=True)
+                            'AGExRACE', 'SEXxAGE', 'FOODSTMP'],inplace=True)
 
 #set output variable 
 y = df_ipums_scaled['FOODSTMP']
@@ -109,7 +106,7 @@ y = df_ipums_scaled['FOODSTMP']
 X = df_ipums_scaled[['REGION', 'METRO', 'HOMELAND', 'HHINCOME', 'FAMSIZE', 'SEX', 'AGE', \
                     'MARST', 'RACE', 'HISPAN-binary', 'CITIZEN', 'YRSUSA1', 'SPEAKENG', 'EDUC', \
                         'EMPSTAT','VETSTAT','DISSABILITY','FAMSIZExMETRO','SEXxRACE',\
-                            'AGExRACE', 'SEXxAGE', 'SEXxAGExRACE']]
+                            'AGExRACE', 'SEXxAGE']]
     
 #splits the data into training and testing groups
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1680)
@@ -129,8 +126,10 @@ df_results = pd.DataFrame({'Variable':X.columns, 'Coeff OLS':olsReg.params})
 #calculate mean squared error in order to estimate out of sample accuracy
 ols_y_pred = olsReg.predict(X_test)
 OLS_MSE = mean_squared_error(y_test, ols_y_pred)
+print(OLS_MSE)
 
 #plot y-test actual against y-predicted
+
 
 #RIDGE REGRESSION
 
@@ -172,6 +171,7 @@ ridgeReg.fit(X_train, y_train)
 #calculate mean squared error in order to estimate out of sample accuracy
 ridge_y_pred = ridgeReg.predict(X_test)
 RIDGE_MSE = mean_squared_error(y_test, ridge_y_pred)
+print(RIDGE_MSE)
 
 # Add coefficients to results dataframe
 df_results['Coeff RIDGE'] = ridgeReg['ridge'].coef_
@@ -202,12 +202,13 @@ lassoReg.fit(X_train, y_train)
 #calculate mean squared error in order to estimate out of sample accuracy
 lasso_y_pred = lassoReg.predict(X_test)
 LASSO_MSE = mean_squared_error(y_test, lasso_y_pred)
+print(LASSO_MSE)
 
 # Add coefficients to dataframe
 df_results['Coeff LASSO'] = lassoReg['lasso'].coef_
 print(df_results)
 
-#see which variables are most predictive of SNAP participation
+#identify which variables are most predictive of SNAP participation
 lasso_best_vars = df_results[(df_results['Coeff LASSO'] > 0) | \
                              (df_results['Coeff LASSO'] < 0)].sort_values("Coeff LASSO", ascending=False, key=abs)
 lasso_best_vars_list = lasso_best_vars["Variable"].tolist()
