@@ -12,7 +12,6 @@ import random
 import statsmodels.api as sm
 import ipumspy 
 from statsmodels.iolib.summary2 import summary_col
-
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import Lasso, LassoCV
 from sklearn.linear_model import Ridge, RidgeCV
@@ -131,6 +130,7 @@ df_results = pd.DataFrame({'Variable':X.columns, 'Coeff OLS':olsReg.params})
 ols_y_pred = olsReg.predict(X_test)
 OLS_MSE = mean_squared_error(y_test, ols_y_pred)
 
+#plot y-test actual against y-predicted
 
 #RIDGE REGRESSION
 
